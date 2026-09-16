@@ -234,7 +234,6 @@
             margin-bottom: 8px;
         }
 
-        /* Certificate Image Cards */
         .cert-card {
             display: flex;
             align-items: center;
@@ -251,14 +250,18 @@
             transform: translateY(-2px);
         }
 
-        .cert-img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid var(--card-border);
+        .cert-icon-wrapper {
+            width: 65px;
+            height: 65px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--accent-color);
             flex-shrink: 0;
-            background: #ffffff;
         }
 
         .cert-info {
@@ -316,6 +319,8 @@
             padding: 20px 24px;
             border-radius: 12px;
             margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
         }
 
         .score-val {
@@ -335,6 +340,7 @@
             .hero-title { font-size: 2.1rem; }
             .nav-links { display: none; }
             .cert-card { flex-direction: column; text-align: center; }
+            .score-highlight { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
@@ -436,56 +442,72 @@
             </div>
         </section>
 
-        <!-- Certifications & Credentials with Image Links -->
+        <!-- Certifications & Credentials with Direct PDF Links -->
         <section id="certifications">
             <h2 class="section-title"><i class="fa-solid fa-award"></i> Certifications & Credentials</h2>
             
+            <!-- NSTC Result Card Highlight -->
             <div class="score-highlight">
                 <div style="display: flex; align-items: center; gap: 16px;">
-                    <!-- Change 'nstc.jpg' to your uploaded NSTC result card filename -->
-                    <img src="NSTC-Result Card.pdf" alt="NSTC Result Card" class="cert-img">
+                    <div class="cert-icon-wrapper">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
                     <div>
                         <strong style="font-size: 1.1rem;">National Skill Competency Test (NSTC)</strong>[cite: 5]<br>
                         <small style="color: var(--text-muted);">Organized by PSEB / HEC Pakistan</small>[cite: 5]
                     </div>
                 </div>
-                <div class="score-val">92.2 Percentile</div>[cite: 5]
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <div class="score-val">92.2 Percentile</div>[cite: 5]
+                    <a href="NSTC-Result Card.pdf" target="_blank" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+                        <i class="fa-solid fa-file-pdf"></i> View PDF
+                    </a>
+                </div>
             </div>
 
             <div class="grid-2">
-                <!-- CodePulse Internship Certificate Card -->
+                <!-- CodePulse Internship Certificate -->
                 <div class="cert-card">
-                    <!-- Change 'codepulse.jpg' to your uploaded CodePulse certificate filename -->
-                    <img src="CodePulse Internship certificate.pdf" alt="CodePulse Internship Certificate" class="cert-img">
+                    <div class="cert-icon-wrapper">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
                     <div class="cert-info">
                         <h3 class="card-title" style="font-size: 1.15rem;">Full Stack Development Internship</h3>
                         <div class="card-subtitle">CodePulse (Reg: CP-FSWD-6018DF)</div>[cite: 2]
-                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 8px;">Awarded for exceptional performance during a 3-month program.[cite: 2]</p>
-                        <span class="card-date">Issued Sep 2025</span>[cite: 2]
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;">Awarded for exceptional performance during a 3-month program.[cite: 2]</p>
+                        <a href="CodePulse Internship certificate.....pdf" target="_blank" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+                            <i class="fa-solid fa-file-pdf"></i> View Official Certificate
+                        </a>
                     </div>
                 </div>
 
                 <!-- HTML5 Certiport Card -->
                 <div class="cert-card">
-                    <!-- Change 'html5.jpg' to your uploaded HTML5 certificate filename -->
-                    <img src="HTML5 Certificate.pdf" alt="HTML5 Certification" class="cert-img">
+                    <div class="cert-icon-wrapper">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
                     <div class="cert-info">
                         <h3 class="card-title" style="font-size: 1.15rem;">HTML5 Application Development</h3>
                         <div class="card-subtitle">Certiport / Pearson VUE</div>[cite: 1, 3]
-                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 8px;">Verified International IT Specialist Certification.[cite: 3]</p>
-                        <span class="card-date">Issued Jun 2026</span>[cite: 3]
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;">Verified International IT Specialist Certification.[cite: 3]</p>
+                        <a href="HTML5 Certification..pdf" target="_blank" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+                            <i class="fa-solid fa-file-pdf"></i> View Official Certification
+                        </a>
                     </div>
                 </div>
 
                 <!-- NAVTTC Card -->
                 <div class="cert-card">
-                    <!-- Change 'navttc.jpg' to your uploaded NAVTTC certificate filename -->
-                    <img src="My NAVTTC official certificate.pdf" alt="NAVTTC Certificate" class="cert-img">
+                    <div class="cert-icon-wrapper">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
                     <div class="cert-info">
                         <h3 class="card-title" style="font-size: 1.15rem;">Advanced Web Application Development</h3>
                         <div class="card-subtitle">NAVTTC (Grade A+)</div>[cite: 1, 4]
-                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 8px;">National Vocational & Technical Training Commission.[cite: 1, 4]</p>
-                        <span class="card-date">Completed Jul 2025</span>[cite: 4]
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;">National Vocational & Technical Training Commission.[cite: 1, 4]</p>
+                        <a href="My NAVTTC official certificate .pdf" target="_blank" class="btn btn-outline" style="padding: 6px 14px; font-size: 0.85rem;">
+                            <i class="fa-solid fa-file-pdf"></i> View Official Certificate
+                        </a>
                     </div>
                 </div>
             </div>
