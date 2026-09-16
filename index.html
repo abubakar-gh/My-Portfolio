@@ -234,10 +234,9 @@
             margin-bottom: 8px;
         }
 
-        /* Certification Cards Styling with Image Badges */
         .cert-card {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 20px;
             background-color: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -251,15 +250,18 @@
             transform: translateY(-2px);
         }
 
-        .cert-badge-img {
-            width: 75px;
-            height: 75px;
-            object-fit: contain;
-            border-radius: 8px;
-            background: #ffffff;
-            padding: 6px;
+        .cert-icon-wrapper {
+            width: 65px;
+            height: 65px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--accent-color);
             flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .cert-info {
@@ -335,7 +337,7 @@
         @media (max-width: 768px) {
             .hero-title { font-size: 2.1rem; }
             .nav-links { display: none; }
-            .cert-card { flex-direction: column; }
+            .cert-card { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -357,6 +359,7 @@
     </header>
 
     <main class="container">
+        <!-- Hero Section -->
         <section class="hero" id="about">
             <h1 class="hero-title">Muhammad Abubakar</h1>
             <p class="hero-subtitle">
@@ -413,7 +416,7 @@
             </div>
         </section>
 
-        <!-- Experience -->
+        <!-- Work Experience -->
         <section id="experience">
             <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Work Experience</h2>
             
@@ -436,13 +439,15 @@
             </div>
         </section>
 
-        <!-- Certifications with Visual Badges -->
+        <!-- Certifications & Competency -->
         <section id="certifications">
             <h2 class="section-title"><i class="fa-solid fa-award"></i> Certifications & Assessment</h2>
             
             <div class="score-highlight">
                 <div style="display: flex; align-items: center; gap: 16px;">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/2535987548258966742_0" alt="PSEB Badge" style="width: 45px; height: 45px; object-fit: contain; background: white; border-radius: 6px; padding: 4px;">
+                    <div class="cert-icon-wrapper">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
                     <div>
                         <strong style="font-size: 1.1rem;">National Skill Competency Test (NSTC)</strong>[cite: 5]<br>
                         <small style="color: var(--text-muted);">Organized by PSEB / HEC Pakistan</small>[cite: 5]
@@ -454,7 +459,9 @@
             <div class="grid-2">
                 <!-- HTML5 Certiport Card -->
                 <div class="cert-card">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/4382293865407863224_0" alt="HTML5 Certification Badge" class="cert-badge-img">
+                    <div class="cert-icon-wrapper">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
                     <div class="cert-info">
                         <h3 class="card-title" style="font-size: 1.15rem;">HTML5 Application Development</h3>
                         <div class="card-subtitle">Certiport / Pearson VUE</div>[cite: 1, 3]
@@ -465,7 +472,9 @@
 
                 <!-- NAVTTC Card -->
                 <div class="cert-card">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/12489770912362797176_0" alt="NAVTTC Government Emblem" class="cert-badge-img">
+                    <div class="cert-icon-wrapper">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
                     <div class="cert-info">
                         <h3 class="card-title" style="font-size: 1.15rem;">Advanced Web Application Development</h3>
                         <div class="card-subtitle">NAVTTC (Grade A+)</div>[cite: 1, 4]
