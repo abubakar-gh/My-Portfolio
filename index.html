@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Abubakar | Full-Stack Web Developer</title>
+    <title>Muhammad Abubakar | Full-Stack Developer & CS Researcher</title>
     <!-- Google Fonts & FontAwesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,6 +19,8 @@
             --accent-hover: #0284c7;
             --badge-bg: #0f766e;
             --badge-text: #2dd4bf;
+            --pub-bg: rgba(56, 189, 248, 0.08);
+            --pub-border: rgba(56, 189, 248, 0.25);
         }
 
         * {
@@ -82,8 +84,32 @@
             color: var(--accent-color);
         }
 
+        /* Hero Layout with Profile Picture */
         .hero {
-            padding: 80px 0 60px;
+            padding: 70px 0 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .profile-img-container {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .profile-img {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+            background-color: var(--card-bg);
         }
 
         .hero-title {
@@ -94,17 +120,17 @@
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
             margin-bottom: 24px;
-            max-width: 750px;
+            max-width: 700px;
         }
 
         .contact-bar {
             display: flex;
             flex-wrap: wrap;
             gap: 16px;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .contact-item {
@@ -234,6 +260,58 @@
             margin-bottom: 8px;
         }
 
+        /* Research / Publication Cards */
+        .pub-card {
+            background-color: var(--pub-bg);
+            border: 1px solid var(--pub-border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            transition: transform 0.2s ease;
+        }
+
+        .pub-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        .pub-status-badge {
+            display: inline-block;
+            background: rgba(15, 118, 110, 0.2);
+            color: var(--badge-text);
+            border: 1px solid var(--badge-bg);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .authors-text {
+            color: var(--accent-color);
+            font-size: 0.92rem;
+            font-weight: 500;
+            margin: 6px 0 12px;
+        }
+
+        .authors-text strong {
+            text-decoration: underline;
+            color: #ffffff;
+        }
+
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 14px;
+            background: rgba(15, 23, 42, 0.5);
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+        }
+
         .cert-card {
             display: flex;
             align-items: center;
@@ -337,7 +415,11 @@
         }
 
         @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; text-align: center; gap: 24px; }
+            .profile-img { width: 150px; height: 150px; }
             .hero-title { font-size: 2.1rem; }
+            .contact-bar { justify-content: center; }
+            .btn-group { justify-content: center; }
             .nav-links { display: none; }
             .cert-card { flex-direction: column; text-align: center; }
             .score-highlight { flex-direction: column; align-items: flex-start; }
@@ -352,6 +434,7 @@
                 <div class="logo">M. Abubakar</div>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#certifications">Certifications</a></li>
@@ -362,27 +445,92 @@
     </header>
 
     <main class="container">
-        <!-- Hero Section -->
+        <!-- Hero Section with Picture -->
         <section class="hero" id="about">
-            <h1 class="hero-title">Muhammad Abubakar</h1>
-            <p class="hero-subtitle">
-                Software Developer & Full-Stack Engineer specialized in building modern web applications, scalable REST APIs, and integrated AI solutions.
-            </p>
-            
-            <div class="contact-bar">
-                <span class="contact-item"><i class="fa-solid fa-location-dot"></i> Multan, Pakistan</span>
-                <a href="mailto:abubakaraamir19@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i> abubakaraamir19@gmail.com</a>
-                <span class="contact-item"><i class="fa-solid fa-phone"></i> +92-332-8159977</span>
-                <a href="https://linkedin.com/in/abubakaraamir" target="_blank" class="contact-item"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <div class="hero-text">
+                <h1 class="hero-title">Muhammad Abubakar</h1>
+                <p class="hero-subtitle">
+                    Software Developer & Computer Science Researcher specialized in Full-Stack Systems, Computer Vision, and Efficient Deep Learning Architectures.
+                </p>
+                
+                <div class="contact-bar">
+                    <span class="contact-item"><i class="fa-solid fa-location-dot"></i> Multan, Pakistan</span>
+                    <a href="mailto:abubakaraamir19@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i> abubakaraamir19@gmail.com</a>
+                    <span class="contact-item"><i class="fa-solid fa-phone"></i> +92-332-8159977</span>
+                    <a href="https://linkedin.com/in/abubakaraamir" target="_blank" class="contact-item"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                </div>
+
+                <div class="btn-group">
+                    <a href="#research" class="btn btn-primary"><i class="fa-solid fa-book-bookmark"></i> Research Papers</a>
+                    <a href="https://resturant-two-xi.vercel.app" target="_blank" class="btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo (ROMS)</a>
+                </div>
             </div>
 
-            <div class="btn-group">
-                <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-code"></i> View Projects</a>
-                <a href="https://resturant-two-xi.vercel.app" target="_blank" class="btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo (ROMS)</a>
+            <!-- Profile Image Container -->
+            <div class="profile-img-container">
+                <!-- Upload your picture to GitHub as profile.jpg -->
+                <img src="profile.jpg" alt="Muhammad Abubakar" class="profile-img">
             </div>
         </section>
 
-        <!-- Projects -->
+        <!-- Accepted Conference Papers Section -->
+        <section id="research">
+            <h2 class="section-title"><i class="fa-solid fa-scroll"></i> Research Publications & Accepted Papers</h2>
+            
+            <!-- Paper 1 -->
+            <div class="pub-card">
+                <span class="pub-status-badge"><i class="fa-solid fa-circle-check"></i> Accepted Paper</span>
+                <h3 class="card-title">1. Mobile-ConvViT: Parameter-Efficient Hybrid CNN-Vision Transformer for Low-Latency Edge Vision</h3>
+                <div class="authors-text">
+                    Authors: <strong>Muhammad Abubakar</strong>, Sultan Mohyuddin, Fatah Chandio, Adeel Abro
+                </div>
+                
+                <div class="meta-info">
+                    <span><i class="fa-solid fa-building-columns"></i> <strong>Conference:</strong> 2026 IEEE 4th International Conference on Computer, Vision and Intelligent Technology (ICCVIT 2026)</span>
+                    <span><i class="fa-solid fa-fingerprint"></i> <strong>Submission ID:</strong> IEEE_ICCVIT-2026-000092</span>
+                </div>
+
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 14px;">
+                    <strong>Abstract:</strong> Running Vision Transformers on low-power edge hardware is difficult because self-attention requires heavy computation and memory, while standard CNNs are fast but miss global context. This paper presents Mobile-ConvViT, a lightweight hybrid model that uses early 2D convolutional layers to shrink the image into a compact 8x8 feature grid, then applies multi-head self-attention over only 64 tokens to capture global context. On an NVIDIA T4 GPU, the model reaches 78.4% Top-1 accuracy on CIFAR-10 with 1.28M parameters and 1.48 ms latency (~675 FPS), outperforming ResNet-18 and MobileNetV3-Small in speed and efficiency.
+                </p>
+
+                <div class="tags" style="margin-bottom: 0;">
+                    <span class="tag">Hybrid Vision Transformer</span>
+                    <span class="tag">Edge AI</span>
+                    <span class="tag">Mobile-ConvViT</span>
+                    <span class="tag">ICCVIT 2026</span>
+                    <span class="tag">IEEE</span>
+                </div>
+            </div>
+
+            <!-- Paper 2 -->
+            <div class="pub-card">
+                <span class="pub-status-badge"><i class="fa-solid fa-circle-check"></i> Accepted Paper</span>
+                <h3 class="card-title">2. Lite-TemporalViT: Decoupled Spatial-Temporal Transformer for Ultra-Low Latency Aerial Drone Surveillance</h3>
+                <div class="authors-text">
+                    Authors: Sultan Mohyuddin, <strong>Muhammad Abubakar</strong>, Kamran Ali Memon, Mudassar Ali, Muhammad Asghar Khan
+                </div>
+
+                <div class="meta-info">
+                    <span><i class="fa-solid fa-building-columns"></i> <strong>Conference:</strong> ICCT 2026</span>
+                    <span><i class="fa-solid fa-hashtag"></i> <strong>Paper ID:</strong> 1776</span>
+                </div>
+
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 14px;">
+                    <strong>Abstract:</strong> Real-time video analysis on small drones is limited by onboard compute and memory. Standard 3D CNNs and video transformers process spatial and temporal information together at high computational cost. This paper presents Lite-TemporalViT, a factorized hybrid architecture that decouples spatial and temporal extraction using a lightweight 2D CNN with a 2-layer temporal transformer encoder. Evaluated on an NVIDIA T4 GPU using 4-frame clips, it reaches 79.2% Top-1 accuracy with 1.28M parameters and 1.58 ms latency (~632 FPS), outperforming 3D-ResNet18, SlowFast-Lite, and ViViT-Tiny.
+                </p>
+
+                <div class="tags" style="margin-bottom: 0;">
+                    <span class="tag">Drone Surveillance</span>
+                    <span class="tag">Temporal Transformer</span>
+                    <span class="tag">Lite-TemporalViT</span>
+                    <span class="tag">ICCT 2026</span>
+                    <span class="tag">Low Latency</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
         <section id="projects">
             <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Featured Projects</h2>
             
